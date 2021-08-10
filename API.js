@@ -22,7 +22,8 @@ app.get('/api/cpus', (req, res) => {
 })
 app.get('/api/ram', (req, res) => {
     const ram = {
-        ram: `${os.totalmem() / 1024 / 1024 / 1024} GB`
+        total: `${os.totalmem() / 1024 / 1024} MB`,
+        free: `${os.freemem() / 1024 / 1024} MB`
     }
     res.send(ram)
 })
